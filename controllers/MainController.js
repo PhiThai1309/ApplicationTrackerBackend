@@ -1,0 +1,51 @@
+import { response } from "express";
+import Application from "../model/Application.js";
+import { Status } from "../model/Status.js";
+
+class MainController {
+  fetch(req, res) {
+    Application.find({})
+      .sort({ applicationDate: -1 })
+      .then((courses) => {
+        res.json(courses);
+      })
+      .catch((error) => console.error(error));
+  }
+
+  save(req, res) {
+    const newApplication = new Application(req.body);
+    console.log(newApplication.applicationDate.toISOString());
+    var application = new Application({
+      companyName: newApplication.companyName,
+      position: newApplication.position,
+      applicationDate: new Date(newApplication.applicationDate),
+      jd: newApplication.jd,
+      hrEmail: newApplication.hrEmail,
+      applyThrough: newApplication.applyThrough,
+      status: newApplication.status,
+    });
+
+    application
+      .save()
+      .then((courses) => {
+        // res.status(201).send;
+        console.log();
+        return res
+          .status(201)
+          .json({ status: true, result: "Create successful!" });
+      })
+      .catch((err) => {
+        return res.status(err.statusCode).send({ message: err.message });
+      });
+  }
+
+  status(req, res) {
+    const convertedStatus = Object.entries(Status).map(([name, value]) => ({
+      name: name.charAt(0).toUpperCase() + name.slice(1), // Convert the name to title case
+      value: parseInt(value), // Parse the value to an integer
+    }));
+    res.json(convertedStatus);
+  }
+}
+
+export default new MainController();
