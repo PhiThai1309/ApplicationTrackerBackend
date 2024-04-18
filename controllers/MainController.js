@@ -44,7 +44,21 @@ class MainController {
       name: name.charAt(0).toUpperCase() + name.slice(1), // Convert the name to title case
       value: parseInt(value), // Parse the value to an integer
     }));
-    res.json(convertedStatus);
+    return res.json(convertedStatus);
+  }
+
+  update(req, res) {
+    console.log(req.params.id);
+    console.log(req.body);
+    Application.updateOne({ _id: req.params.id }, req.body)
+      .then((result) => {
+        return res
+          .status(201)
+          .json({ status: true, result: "Edit successful!" });
+      })
+      .catch((err) => {
+        return res.status(err.statusCode).send({ message: err.message });
+      });
   }
 }
 
