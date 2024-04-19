@@ -60,6 +60,18 @@ class MainController {
         return res.status(err.statusCode).send({ message: err.message });
       });
   }
+
+  delete(req, res) {
+    Application.findByIdAndDelete({ _id: req.params.id })
+      .then((result) => {
+        return res
+          .status(201)
+          .json({ status: true, result: "Delete successful!" });
+      })
+      .catch((err) => {
+        return res.status(err.statusCode).send({ message: err.message });
+      });
+  }
 }
 
 export default new MainController();

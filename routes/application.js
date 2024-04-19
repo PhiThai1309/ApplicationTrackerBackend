@@ -7,5 +7,6 @@ applicationRouter.get("/", MainController.fetch);
 applicationRouter.get("/status", MainController.status);
 applicationRouter.post("/create", MainController.save);
 applicationRouter.put("/:id", MainController.update);
+applicationRouter.delete("/:id", MainController.delete);
 
 export default applicationRouter;
