@@ -40,10 +40,15 @@ class MainController {
   }
 
   status(req, res) {
-    const convertedStatus = Object.entries(Status).map(([name, value]) => ({
-      name: name.charAt(0).toUpperCase() + name.slice(1), // Convert the name to title case
-      value: parseInt(value), // Parse the value to an integer
-    }));
+    // const convertedStatus = Object.entries(Status).map(
+    //   ([name, { value, color }]) => ({
+    //     name: name.charAt(0).toUpperCase() + name.slice(1), // Convert the name to title case
+    //     value: parseInt(value), // Parse the value to an integer
+    //     color: color, // Keep the original color
+    //   })
+    // );
+    const convertedStatus = JSON.stringify(Status);
+    console.log(convertedStatus);
     return res.json(convertedStatus);
   }
 

@@ -8,7 +8,7 @@ const Application = new Schema({
   jd: String,
   hrEmail: String,
   applyThrough: String,
-  status: { type: String, default: Status.new },
+  status: { type: String, default: Status.New.value },
 });
 
 export default mongoose.model("Application", Application);
