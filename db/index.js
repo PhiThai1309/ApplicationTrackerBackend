@@ -1,8 +1,8 @@
 import { connect } from "mongoose";
 
-async function start() {
+async function start(url) {
   try {
-    await connect("mongodb://localhost:27017/application-tracker");
+    await connect(url);
     console.log("Connected to MongoDB");
   } catch (error) {
     console.log("Fail");

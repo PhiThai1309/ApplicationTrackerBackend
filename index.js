@@ -10,7 +10,8 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-start();
+const url = "mongodb://localhost:27017/application-tracker";
+start(url);
 
 mainRoute(app);
 app.listen(port, () => console.log(`Example listening at port ${port}`));
