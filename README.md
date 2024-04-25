@@ -76,6 +76,7 @@ The `MainController` class handles various CRUD operations for managing applicat
 6. You can now use the provided APIs to manage job applications.
 
 ### For Front-end:
+Please follow the instruction from this [link](https://github.com/PhiThai1309/application-tracker) to run frontend
 Open [http://localhost:3001](http://localhost:8080) with your browser to see the result. (port 3000 is reserve for backend)
 
 
