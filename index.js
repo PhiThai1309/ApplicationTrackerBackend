@@ -2,7 +2,6 @@ import express from "express";
 import mainRoute from "./routes/index.js";
 import start from "./db/index.js";
 import cors from "cors";
-import { mongoURI } from "./config.js";
 
 const app = express();
 const port = 3000;
@@ -11,7 +10,7 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-start(mongoURI);
+start();
 
 mainRoute(app);
 app.listen(port, () => console.log(`Example listening at port ${port}`));

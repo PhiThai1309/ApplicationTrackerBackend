@@ -1,4 +1,3 @@
-import { response } from "express";
 import Application from "../model/Application.js";
 import { Status } from "../model/Status.js";
 
@@ -8,8 +7,12 @@ class MainController {
       .sort({ applicationDate: -1 })
       .then((courses) => {
         res.json(courses);
+        console.log(courses);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        res.status(404).send({ message: "error.message" });
+        console.error(error);
+      });
   }
 
   save(req, res) {
