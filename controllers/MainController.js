@@ -1,5 +1,5 @@
 const Application = require("../model/Application.js"); // Assuming Application.js uses CommonJS as well
-const { Status } = require("../model/Status.js"); // Assuming Status.js uses CommonJS as well
+const Status = require("../model/Status.js"); // Assuming Status.js uses CommonJS as well
 
 class MainController {
   fetch(req, res) {
