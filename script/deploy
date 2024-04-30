@@ -4,11 +4,6 @@ ssh ec2-user@ip-172-31-29-194 <<EOF
     cd ~/ApplicationTrackerBackend
     git pull origin mongodb-atlas
 
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-
-    source ~/.bashrc
-    
-    nvm install --lts
     npm install
     npm install -g nodemon pm2
     pm2 restart ecosystem.config.js
