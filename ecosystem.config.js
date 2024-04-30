@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "node-app",
+      name: "application-tracker-BE",
       script: "npm",
       args: "start",
     },
