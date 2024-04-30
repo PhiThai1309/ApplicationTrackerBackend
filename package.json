@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node --experimental-loader ./loader.js index.js",
+		"start": "node index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "phithai",
@@ -17,6 +17,5 @@
 		"mongoose": "^8.3.1",
 		"nodemon": "^3.1.0"
 	},
-	"type": "module",
 	"Transform": "AWS::Serverless-2016-10-31"
 }

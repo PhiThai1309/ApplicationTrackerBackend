@@ -1,5 +1,5 @@
-import Application from "../model/Application.js";
-import { Status } from "../model/Status.js";
+const Application = require("../model/Application.js"); // Assuming Application.js uses CommonJS as well
+const { Status } = require("../model/Status.js"); // Assuming Status.js uses CommonJS as well
 
 class MainController {
   fetch(req, res) {
@@ -18,7 +18,7 @@ class MainController {
   save(req, res) {
     const newApplication = new Application(req.body);
     console.log(newApplication.applicationDate.toISOString());
-    var application = new Application({
+    const application = new Application({
       companyName: newApplication.companyName,
       position: newApplication.position,
       applicationDate: new Date(newApplication.applicationDate),
@@ -82,4 +82,5 @@ class MainController {
   }
 }
 
-export default new MainController();
+// Exporting an instance (avoid this in most cases)
+module.exports = new MainController();

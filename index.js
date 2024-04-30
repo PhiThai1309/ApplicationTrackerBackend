@@ -1,7 +1,7 @@
-import express from "express";
-import mainRoute from "./routes/index.js";
-import start from "./db/index.js";
-import cors from "cors";
+const express = require("express");
+const mainRoute = require("./routes/index.js"); // Assuming index.js uses CommonJS as well
+const start = require("./db/index.js"); // Assuming index.js uses CommonJS as well
+const cors = require("cors");
 
 const app = express();
 const port = 3000;

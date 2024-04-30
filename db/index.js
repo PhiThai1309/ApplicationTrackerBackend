@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import "dotenv/config";
+const mongoose = require("mongoose");
+require("dotenv").config(); // Load environment variables
 
 const uri = process.env.MONGODB_CONNECTION;
 
@@ -16,7 +16,7 @@ async function start() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-export default start;
+module.exports = start;
 
 // const uri = mongoURI;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version

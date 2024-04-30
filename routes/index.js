@@ -1,7 +1,7 @@
-import applicationRouter from "./application.js";
+const applicationRouter = require("./application.js"); // Assuming application.js uses CommonJS as well
 
 function mainRoute(app) {
   app.use("/application", applicationRouter);
 }
 
-export default mainRoute;
+module.exports = mainRoute;

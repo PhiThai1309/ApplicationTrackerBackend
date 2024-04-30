@@ -1,7 +1,8 @@
-import mongoose, { Schema } from "mongoose";
-import { Status } from "./Status.js";
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const Status = require("./Status.js"); // Assuming Status.js uses CommonJS as well
 
-const Application = new Schema({
+const applicationSchema = new Schema({
   companyName: String,
   position: String,
   applicationDate: { type: Date, default: Date.now },
@@ -11,4 +12,4 @@ const Application = new Schema({
   status: { type: String, default: Status.New.value },
 });
 
-export default mongoose.model("Application", Application);
+module.exports = mongoose.model("Application", applicationSchema);
