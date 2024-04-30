@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "application-tracker-BE",
+      name: "ApplicationTrackerBackend",
       script: "npm",
       args: "start",
     },

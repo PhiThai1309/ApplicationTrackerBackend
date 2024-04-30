@@ -1,8 +1,8 @@
 #!/bin/sh
 chmod +x script/deploy
 ssh ec2-user@ip-172-31-29-194 <<EOF
-    cd ~/application-tracker-BE
-    git pull origin master
+    cd ~/ApplicationTrackerBackend
+    git pull origin mongodb-atlas
     curl -o-   https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh    | bash
     . ~/.nvm/nvm.sh
     nvm install v10.11.0
