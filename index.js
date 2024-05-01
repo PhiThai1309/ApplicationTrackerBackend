@@ -14,6 +14,7 @@ start();
 
 mainRoute(app);
 app.listen(port, () => {
+  console.log("sadsad");
   console.log(process.env.MONGODB_CONNECTION);
   console.log(`Example listening at port ${port}`);
 });
