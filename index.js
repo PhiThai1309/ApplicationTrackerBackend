@@ -13,7 +13,10 @@ app.use(express.json());
 start();
 
 mainRoute(app);
-app.listen(port, () => console.log(`Example listening at port ${port}`));
+app.listen(port, () => {
+  console.log(process.env.MONGODB_CONNECTION);
+  console.log(`Example listening at port ${port}`);
+});
 
 // app.get("/", (req, res) => {
 //   res.send("Hello World!");
