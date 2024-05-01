@@ -15,11 +15,6 @@ start();
 
 mainRoute(app);
 app.listen(port, () => {
-  (async () => {
-    const connectionString = await getParameter("MONGODB_CONNECTION");
-    console.log("MongoDB connection string:", connectionString);
-    // Use the connectionString in your MongoDB connection logic
-  })();
   console.log(`Example listening at port ${port}`);
 });
 
