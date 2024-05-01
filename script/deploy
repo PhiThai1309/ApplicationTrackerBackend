@@ -3,7 +3,7 @@ chmod +x script/deploy
 ssh ec2-user@ip-172-31-29-194 <<EOF
     export MONGODB_CONNECTION=$(aws --region=us-east-1 ssm get-parameter --name "MONGODB_CONNECTION" --with-decryption --output text --query Parameter.Value)
     cd ~/ApplicationTrackerBackend
-    git pull origin mongodb-atlas
+    git pull --force origin mongodb-atlas
 nvm install 16
     npm install
     npm install -g nodemon pm2
