@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 require("dotenv").config(); // Load environment variables
 
 const uri = process.env.MONGODB_CONNECTION;
+console.log(uri);
+console.log(MONGODB_CONNECTION);
 
 async function start() {
   try {
