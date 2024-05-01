@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
+const getParameter = require("./ssm");
 require("dotenv").config(); // Load environment variables
 
-const uri = process.env.MONGODB_CONNECTION;
-console.log(uri);
-console.log(process.env.MONGODB_CONNECTION);
+// const uri = process.env.MONGODB_CONNECTION;
+// console.log(uri);
+// console.log(process.env.MONGODB_CONNECTION);
 
 async function start() {
   try {
+    const uri = await getParameter("MONGODB_CONNECTION");
     await mongoose.connect(uri, {
       authSource: "admin",
       ssl: true,
