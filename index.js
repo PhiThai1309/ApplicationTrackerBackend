@@ -2,6 +2,7 @@ const express = require("express");
 const mainRoute = require("./routes/index.js"); // Assuming index.js uses CommonJS as well
 const start = require("./db/index.js"); // Assuming index.js uses CommonJS as well
 const cors = require("cors");
+const getParameter = require("./db/ssm.js");
 
 const app = express();
 const port = 3000;
