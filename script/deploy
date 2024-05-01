@@ -1,6 +1,7 @@
 #!/bin/sh
 chmod +x script/deploy
 ssh ec2-user@ip-172-31-29-194 <<EOF
+MONGODB_CONNECTION=$(aws ssm get-parameter --name " MONGODB_CONNECTION "  --query "Parameter.Value" --output text)
     cd ~/ApplicationTrackerBackend
     git pull origin mongodb-atlas
 nvm install 16
